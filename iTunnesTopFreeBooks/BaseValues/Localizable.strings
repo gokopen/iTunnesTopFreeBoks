@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  iTunnesTopFreeBooks
+
+  Created by Gokhan Alp on 4.01.2021.
+  
+*/
+
+// MARK: - Home
+"Home.title" = "Home";
+
+"Home.sort" = "Sort";
+"Home.sortAll" = "Sort All";
+"Home.sortToNew" = "Old To New";
+"Home.sortToOld" = "New To Old";
+"Home.sortOnlyFavorites" = "Only Favorites";
+
+"Home.welcome" = "Welcome";
+"Home.welcomeInfo" = "Please don't forget to read readme file. I wrote some notes and explained some details.";
+"Home.ok" = "OK";
+
+
+// MARK: - Search
+"Search.title" = "Search";
+"Search.warning" = "Warning";
+"Search.tunableToContinueWithoutSelectFilter" = "You must select at least one filter to search!";
+"Search.ok" = "OK";
+
+// MARK: - Favorites
+"Favorites.title" = "Favorites";
+
+// MARK: - Details
+"Detail.title" = "Content Details";
+"Detail.author" = "Author";
+"Detail.releaseDate" = "Release Date";
+

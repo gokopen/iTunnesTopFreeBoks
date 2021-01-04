@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorites-->
+        <scene sceneID="DMz-xD-0eY">
+            <objects>
+                <navigationController storyboardIdentifier="FavoritesNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7QG-ex-gF0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="PU3-i7-gYu"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sVq-zt-6Kd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SGk-0C-VIf" kind="relationship" relationship="rootViewController" id="AEc-gF-Hgz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EaW-MQ-TZq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-241" y="54"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="DFq-VI-hL3">
+            <objects>
+                <viewController storyboardIdentifier="FavoritesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SGk-0C-VIf" customClass="FavoritesViewController" customModule="iTunnesTopFreeBooks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MOu-GC-Lej">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZW-XM-iTf" customClass="BooksView" customModule="iTunnesTopFreeBooks" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H6r-Jd-DYt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uZW-XM-iTf" firstAttribute="top" secondItem="H6r-Jd-DYt" secondAttribute="top" id="AKt-lP-qdF"/>
+                            <constraint firstItem="uZW-XM-iTf" firstAttribute="leading" secondItem="MOu-GC-Lej" secondAttribute="leading" id="RpR-Ci-kgx"/>
+                            <constraint firstAttribute="bottom" secondItem="uZW-XM-iTf" secondAttribute="bottom" id="Rtz-R1-43T"/>
+                            <constraint firstItem="H6r-Jd-DYt" firstAttribute="trailing" secondItem="uZW-XM-iTf" secondAttribute="trailing" id="bZ9-1Q-JTq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hil-yx-vBG"/>
+                    <connections>
+                        <outlet property="booksView" destination="uZW-XM-iTf" id="4ca-Ni-cmf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wh6-N4-HxC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="54"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
