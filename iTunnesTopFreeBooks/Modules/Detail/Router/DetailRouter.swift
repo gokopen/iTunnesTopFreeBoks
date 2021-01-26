@@ -7,10 +7,12 @@
 
 import Foundation
 
-class DetailRouter: Router {
+class DetailRouter: Router, DetailPresenterToRouterProtocol {
+    
     static func createModule(uiModel: BooksUIModel) -> DetailViewController {
-        let vc = DetailRouter.createModule(viewController: DetailViewController.self, interactor: DetailInteractor(), presenter: DetailPresenter(), router: DetailRouter())
+        let vc = RouterInitializer.createModule(viewType: DetailViewController.self, interactor: DetailInteractor(), presenter: DetailPresenter(), router: DetailRouter())
         vc.uiModel = uiModel
         return vc
     }
+    
 }

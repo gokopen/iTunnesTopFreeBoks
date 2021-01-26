@@ -7,20 +7,19 @@
 
 import UIKit
 
-class HomeViewController: ViewController, HomePresenterToViewControllerProtocol   {
+class HomeViewController: ViewController, HomePresenterToViewControllerProtocol {
     
-    typealias presenterType = HomeViewControllerToPresenterProtocol
+    var presenter: HomeViewControllerToPresenterProtocol! { get { return getPresenter(type: HomePresenter.self)} }
     
     @IBOutlet weak var booksView: BooksView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = Localizations.Home.title
-        HomeRouter.setupModuleWithExistingView(view: self, interactor: HomeInteractor(), presenter: HomePresenter(), router: HomeRouter())
+        HomeRouter.createModule(viewController: self)
+        
         self.booksView.setDelegate(self)
-        if let p = self.presenter as? presenterType {
-            p.viewLoaded()
-        }
+        self.presenter.viewLoaded()
         
         let sortBarButton = UIBarButtonItem(title: Localizations.Home.sort, style: .plain, target: self, action: #selector(sortTapped))
         self.navigationItem.rightBarButtonItem = sortBarButton
@@ -62,10 +61,10 @@ class HomeViewController: ViewController, HomePresenterToViewControllerProtocol 
 
 extension HomeViewController: BooksViewDelegate {
     func itemTapped(tappedItemModel: BooksUIModel, index: Int) {
-        (self.presenter as? presenterType)?.itemTapped(tappedItemModel: tappedItemModel)
+        self.presenter.itemTapped(tappedItemModel: tappedItemModel, fromVC: self)
     }
     
     func pagingAwaiting(awaitingPageIndex: Int) {
-        (self.presenter as? presenterType)?.fetchNext(awaitingPageIndex: awaitingPageIndex)
+        self.presenter.fetchNext(awaitingPageIndex: awaitingPageIndex)
     }
 }

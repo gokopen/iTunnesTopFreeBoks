@@ -5,26 +5,26 @@
 //  Created by Gokhan Alp on 3.01.2021.
 //
 
-import Foundation
+import UIKit
 
-class FavoritesPresenter: Presenter<FavoritesViewController, FavoritesInteractor, FavoritesRouter>  {
-    
+class FavoritesPresenter: Presenter  {
+    var viewController: FavoritesPresenterToViewControllerProtocol! { get { return getViewController(type: FavoritesViewController.self)} }
+    var interactor: FavoritesPresenterToInteractorProtocol! { get { return getInteractor(type: FavoritesInteractor.self)} }
+    var router: FavoritesPresenterToRouterProtocol! { get { return getRouter(type: FavoritesRouter.self)} }
 }
 
 extension FavoritesPresenter: FavoritesViewControllerToPresenterProtocol {
     func viewLoaded() {
-        self.interactor?.fetchData()
+        self.interactor.fetchData()
         NotificationCenter.default.addObserver(self,selector: #selector(self.favoriteUpdated), name: NSNotification.Name(rawValue: Constants.NotificationCenter.favoriteUpdated), object: nil)
     }
     
     @objc func favoriteUpdated(notification: NSNotification) {
-        self.interactor?.fetchData()
+        self.interactor.fetchData()
     }
     
-    func itemTapped(tappedItemModel: BooksUIModel) {
-        if let vc = self.viewController {
-            self.router?.pushToDetail(from: vc, uiModel: tappedItemModel)
-        }
+    func itemTapped(tappedItemModel: BooksUIModel, fromVC: UIViewController) {
+        self.router.pushToDetail(from: fromVC, uiModel: tappedItemModel)
     }
 }
 
@@ -39,7 +39,7 @@ extension FavoritesPresenter: FavoritesInteractorToPresenterProtocol {
                     uiItems.append(uiModel)
                 }
             }
-            self.viewController?.setItems(uiItems: uiItems)
+            self.viewController.setItems(uiItems: uiItems)
         }
         
     }

@@ -24,3 +24,8 @@ protocol DetailPresenterToInteractorProtocol: PresenterToInteractorProtocol {
 protocol DetailInteractorToPresenterProtocol: InteractorToPresenterProtocol {
 
 }
+
+// MARK: - Router
+protocol DetailPresenterToRouterProtocol: RouterProtocol {
+
+}

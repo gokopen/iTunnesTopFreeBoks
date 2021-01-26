@@ -9,7 +9,7 @@ import UIKit
 
 class FavoritesViewController: ViewController, FavoritesPresenterToViewControllerProtocol   {
     
-    typealias presenterType = FavoritesViewControllerToPresenterProtocol
+    var presenter: FavoritesViewControllerToPresenterProtocol! { get { return getPresenter(type: FavoritesPresenter.self)} }
     
     @IBOutlet weak var booksView: BooksView!
     
@@ -17,8 +17,8 @@ class FavoritesViewController: ViewController, FavoritesPresenterToViewControlle
         super.viewDidLoad()
         self.title = Localizations.Favorites.title
         self.booksView.setDelegate(self)
-        FavoritesRouter.setupModuleWithExistingView(view: self, interactor: FavoritesInteractor(), presenter: FavoritesPresenter(), router: FavoritesRouter())
-        (self.presenter as? presenterType)?.viewLoaded()
+        FavoritesRouter.createModule(viewController: self)
+        self.presenter.viewLoaded()
     }
     
     func setItems(uiItems: [BooksUIModel]) {
@@ -29,12 +29,11 @@ class FavoritesViewController: ViewController, FavoritesPresenterToViewControlle
 
 extension FavoritesViewController: BooksViewDelegate {
     func itemTapped(tappedItemModel: BooksUIModel, index: Int) {
-        (self.presenter as? presenterType)?.itemTapped(tappedItemModel: tappedItemModel)
+        self.presenter.itemTapped(tappedItemModel: tappedItemModel, fromVC: self)
     }
     
     func pagingAwaiting(awaitingPageIndex: Int) {
         
     }
-    
     
 }

@@ -9,6 +9,7 @@ import Foundation
 
 // MARK: - ViewController
 protocol PresenterToViewControllerProtocol: class {
+    
 }
 
 protocol ViewControllerToPresenterProtocol: class {
@@ -22,12 +23,12 @@ protocol PresenterToInteractorProtocol: class {
 }
 
 protocol InteractorToPresenterProtocol: class {
-
+    
 }
 
 // MARK: - Router
 protocol RouterProtocol: class {
-
+    
 }
 
 

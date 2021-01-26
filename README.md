@@ -1,5 +1,14 @@
 # iTunnesTopFreeBoks
 
+--- SON SÜRÜM ---
+İlk sürümde çok fazla zamanım yoktu ve demo projesinde bir takım şeylerlerle çok zaman kaybetmiştim. Anca vakit bulabildim ve ciddi oranda toparladım. Değişiklikler;
+
+Swift dilinin bazı sıkıntılarından dolayı generic setlediğim bazı layerlar (presenter, viewController vs.) aslında classın tamamını baz almıştı bu sebepten dolayı izolasyon ve protocol orriented programming sağlanamamıştı düzeltildi.
+Bu çalışmayı yaptığım zamanda yeterli zaman olmaması ve özellikle kurmak istediğim yapıyla çok uğraşmam dolayısıyla modüller için unit teste zaman ayıramamıştım şuanda sadece Home modülü için detaylı bir unit test yapısı kurdum. ViewController - Presenter - Interactor ilişkisi HomeModuleTest içinde test edilebiliyor.
+Generic yapılar ile her modül layerının (presenter, viewController, interactor vs.) super classta da iletişim kurabilmesi ve pratik bir yapıyla daha rahat erişilebilir olmalarına çok uğraşmıştım ancak çok tutarlı bir yapı olmamıştı. Şuanda bu konuda daha da iyi yapı kurguladım. Bir tek Home'da biraz daha farklılaşıp type castingi doğrudan yaparak viewController ve interactor çekiliyor çünkü ne yaparsam yapayım Swift dili dışardan paremetre ile daha farklı bir Type setlemeye izin vermiyor mockViewController ve mockInteractor kullanabilmek için bunları burada böyle kullanmak gerekti. 
+Routerlar kendi içinde yaratılıp utils gibi kullanmak yerine RouterInitializer aracılığıyla yaratılması sağlandı. Bu yaklaşım daha doğru. Böylece super class'taki gerekmeyen kodlar tekrar  tekrar gelmemiş olması sağlandı ve bu amaca yönelik bir class ile bu iş yapılmış oldu.
+
+---- İLK SÜRÜM ----
 Bu uygulama ilettilen projeye göre tasarlanmıştır. 
 Talebe göre 3 tablı yapı entegre edilmiştir.
 Görsel tasarımlara önem verilmemiştir mimariye ağırlık verilmiştir.

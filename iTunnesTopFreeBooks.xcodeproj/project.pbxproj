@@ -20,6 +20,9 @@
 		214B7B3025A3B8F800501F6F /* BooksSearchUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B7B2F25A3B8F800501F6F /* BooksSearchUIModel.swift */; };
 		2150CFCB25A3C28700E7475F /* SearchItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150CFC925A3C28700E7475F /* SearchItemTableViewCell.swift */; };
 		2150CFCC25A3C28700E7475F /* SearchItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2150CFCA25A3C28700E7475F /* SearchItemTableViewCell.xib */; };
+		21601D8C25BE13C6003F6682 /* HomeMockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21601D8B25BE13C6003F6682 /* HomeMockViewController.swift */; };
+		21689E0325B33D0D00776A14 /* HomeModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21689E0225B33D0D00776A14 /* HomeModuleTests.swift */; };
+		21689E1225B3445900776A14 /* RouterInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21689E1125B3445900776A14 /* RouterInitializer.swift */; };
 		21721B9A25A216F900C57DB2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21721B9925A216F900C57DB2 /* Home.storyboard */; };
 		21721BA325A2177500C57DB2 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21721BA225A2177500C57DB2 /* Search.storyboard */; };
 		21721BB425A21B3300C57DB2 /* SearchProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21721BB325A21B3300C57DB2 /* SearchProtocols.swift */; };
@@ -49,6 +52,7 @@
 		21721C6425A248D900C57DB2 /* BooksDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21721C6325A248D900C57DB2 /* BooksDataModel.swift */; };
 		21C7A70125A25DD7000D888F /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C7A70025A25DD7000D888F /* FavoritesManager.swift */; };
 		21C7A70F25A26AFA000D888F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C7A70E25A26AFA000D888F /* Constants.swift */; };
+		21C7E8DC25C0B16E0018961F /* HomeMockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C7E8DB25C0B16E0018961F /* HomeMockInteractor.swift */; };
 		21E21FA825A0B4C400108733 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E21FA725A0B4C400108733 /* AppDelegate.swift */; };
 		21E21FAC25A0B4C400108733 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E21FAB25A0B4C400108733 /* ViewController.swift */; };
 		21E21FAF25A0B4C400108733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E21FAD25A0B4C400108733 /* Main.storyboard */; };
@@ -95,6 +99,9 @@
 		214B7B2F25A3B8F800501F6F /* BooksSearchUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksSearchUIModel.swift; sourceTree = "<group>"; };
 		2150CFC925A3C28700E7475F /* SearchItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemTableViewCell.swift; sourceTree = "<group>"; };
 		2150CFCA25A3C28700E7475F /* SearchItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchItemTableViewCell.xib; sourceTree = "<group>"; };
+		21601D8B25BE13C6003F6682 /* HomeMockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMockViewController.swift; sourceTree = "<group>"; };
+		21689E0225B33D0D00776A14 /* HomeModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModuleTests.swift; sourceTree = "<group>"; };
+		21689E1125B3445900776A14 /* RouterInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterInitializer.swift; sourceTree = "<group>"; };
 		21721B9925A216F900C57DB2 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		21721BA225A2177500C57DB2 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		21721BB325A21B3300C57DB2 /* SearchProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProtocols.swift; sourceTree = "<group>"; };
@@ -124,6 +131,7 @@
 		21721C6325A248D900C57DB2 /* BooksDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksDataModel.swift; sourceTree = "<group>"; };
 		21C7A70025A25DD7000D888F /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		21C7A70E25A26AFA000D888F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		21C7E8DB25C0B16E0018961F /* HomeMockInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMockInteractor.swift; sourceTree = "<group>"; };
 		21E21FA425A0B4C400108733 /* iTunnesTopFreeBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunnesTopFreeBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E21FA725A0B4C400108733 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21E21FAB25A0B4C400108733 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -424,6 +432,7 @@
 				21721C3025A2346900C57DB2 /* Utils.swift */,
 				21721C4925A23B1600C57DB2 /* CachedImageManager.swift */,
 				21C7A70025A25DD7000D888F /* FavoritesManager.swift */,
+				21689E1125B3445900776A14 /* RouterInitializer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -436,6 +445,15 @@
 				214B7B0625A359A900501F6F /* Localizable.strings */,
 			);
 			path = BaseValues;
+			sourceTree = "<group>";
+		};
+		21C7E8D925C0B0E00018961F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				21601D8B25BE13C6003F6682 /* HomeMockViewController.swift */,
+				21C7E8DB25C0B16E0018961F /* HomeMockInteractor.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		21E21F9B25A0B4C400108733 = {
@@ -477,6 +495,8 @@
 			isa = PBXGroup;
 			children = (
 				21E21FBE25A0B4C600108733 /* iTunnesTopFreeBooksTests.swift */,
+				21689E0225B33D0D00776A14 /* HomeModuleTests.swift */,
+				21C7E8D925C0B0E00018961F /* Mocks */,
 				21E21FC025A0B4C600108733 /* Info.plist */,
 			);
 			path = iTunnesTopFreeBooksTests;
@@ -729,6 +749,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				214B7AEB25A3433300501F6F /* NetworkManager.swift in Sources */,
+				21689E1225B3445900776A14 /* RouterInitializer.swift in Sources */,
 				21721C0325A21E8A00C57DB2 /* DetailProtocols.swift in Sources */,
 				21721C1525A21EB800C57DB2 /* DetailInteractor.swift in Sources */,
 				21721C6425A248D900C57DB2 /* BooksDataModel.swift in Sources */,
@@ -776,7 +797,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21689E0325B33D0D00776A14 /* HomeModuleTests.swift in Sources */,
+				21C7E8DC25C0B16E0018961F /* HomeMockInteractor.swift in Sources */,
 				21E21FBF25A0B4C600108733 /* iTunnesTopFreeBooksTests.swift in Sources */,
+				21601D8C25BE13C6003F6682 /* HomeMockViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -945,6 +969,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5XM78PSN27;
 				INFOPLIST_FILE = iTunnesTopFreeBooks/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -952,6 +977,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gokhanAlp.iTunnesTopFreeBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -965,6 +991,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5XM78PSN27;
 				INFOPLIST_FILE = iTunnesTopFreeBooks/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -972,6 +999,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gokhanAlp.iTunnesTopFreeBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -51,6 +51,9 @@ class BooksView: UIView {
         self.viewController?.delegate = delegate
     }
     
+    func getItems() ->  [BooksUIModel] {
+        return self.viewController?.items ?? []
+    }
 
     // Without Paging
     func setItems(items: [BooksUIModel]) {

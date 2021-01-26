@@ -10,7 +10,7 @@ import UIKit
 
 class HomeInteractor: Interactor, HomePresenterToInteractorProtocol {
   
-    typealias presenterType = HomeInteractorToPresenterProtocol
+    var presenter: HomeInteractorToPresenterProtocol! { get { return getPresenter(type: HomePresenter.self)} }
     
     private let api = Api()
     
@@ -18,9 +18,7 @@ class HomeInteractor: Interactor, HomePresenterToInteractorProtocol {
         api.getTopFreeBooksWithPaging(index: awaitingPageIndex) { [weak self] (success, responseIndex, response) in
             guard let self = self else { return }
             if success, let response = response {
-                if let p = self.presenter as? presenterType {
-                    p.addFetchedData(data: response, pageIndex: responseIndex)
-                }
+                self.presenter.addFetchedData(data: response, pageIndex: responseIndex)
             }
         }
     }

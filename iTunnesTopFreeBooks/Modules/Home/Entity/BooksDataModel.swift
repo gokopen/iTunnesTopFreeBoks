@@ -39,9 +39,9 @@ class BooksFeedResultsDataModel: Codable, Equatable {
 }
 
 class BooksFeedResultsGenresDataModel: Codable, Equatable {
-    let genreId: String?
-    let name: String?
-    let url: String?
+    var genreId: String?
+    var name: String?
+    var url: String?
     
     static func == (lhs: BooksFeedResultsGenresDataModel, rhs: BooksFeedResultsGenresDataModel) -> Bool {
         return lhs.genreId == rhs.genreId && lhs.name == rhs.name && lhs.url == rhs.url

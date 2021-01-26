@@ -16,7 +16,7 @@ protocol HomePresenterToViewControllerProtocol: PresenterToViewControllerProtoco
 
 protocol HomeViewControllerToPresenterProtocol: ViewControllerToPresenterProtocol {
     func viewLoaded()
-    func itemTapped(tappedItemModel: BooksUIModel)
+    func itemTapped(tappedItemModel: BooksUIModel, fromVC: UIViewController)
     func fetchNext(awaitingPageIndex: Int)
 }
 

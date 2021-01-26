@@ -5,12 +5,20 @@
 //  Created by Gokhan Alp on 3.01.2021.
 //
 
-import Foundation
+import UIKit
 
-class SearchPresenter: Presenter<SearchViewController, SearchInteractor, SearchRouter>, SearchViewControllerToPresenterProtocol, SearchInteractorToPresenterProtocol  {
+class SearchPresenter: Presenter {
+    var viewController: SearchPresenterToViewControllerProtocol! { get { return getViewController(type: SearchViewController.self)} }
+    var interactor: SearchPresenterToInteractorProtocol! { get { return getInteractor(type: SearchInteractor.self)} }
+    var router: SearchPresenterToRouterProtocol! { get { return getRouter(type: SearchRouter.self)} }
+}
+
+extension SearchPresenter: SearchViewControllerToPresenterProtocol, SearchInteractorToPresenterProtocol  {
+    
+    
     
     func viewLoaded() {
-        self.interactor?.fetchData()
+        self.interactor.fetchData()
     }
     
     func setFetchedData(data: BooksDataModel) {
@@ -30,13 +38,11 @@ class SearchPresenter: Presenter<SearchViewController, SearchInteractor, SearchR
             }
         }
         
-        self.viewController?.setItems(uiItems: uiItems)
+        self.viewController.setItems(uiItems: uiItems)
     }
     
-    func itemTapped(tappedItemModel: BooksSearchUIModel) {
-        if let vc = self.viewController {
-            self.router?.pushToDetail(from: vc, uiModel: tappedItemModel)
-        }
+    func itemTapped(tappedItemModel: BooksSearchUIModel, fromVC: UIViewController) {
+        self.router.pushToDetail(from: fromVC, uiModel: tappedItemModel)
     }
 
 }

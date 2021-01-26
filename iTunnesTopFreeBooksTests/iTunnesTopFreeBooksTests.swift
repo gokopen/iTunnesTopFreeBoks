@@ -178,7 +178,10 @@ class iTunnesTopFreeBooksTests: XCTestCase {
        
         
         expectation.fulfill()
+        wait(for: [expectation], timeout: self.timeout)
     }
+    
+    // MARK - VIPER
     
 
 }

@@ -9,6 +9,14 @@ import Foundation
 
 class Interactor: PresenterToInteractorProtocol  {
 
-    var presenter: InteractorToPresenterProtocol?
+    private var presenterBase: InteractorToPresenterProtocol?
+    
+    func getPresenter<T: InteractorToPresenterProtocol> (type: T.Type) -> T {
+        return self.presenterBase as! T
+    }
+    
+    func setPresenter<T: InteractorToPresenterProtocol> (_ newPresenter: T) {
+        self.presenterBase = newPresenter
+    }
 
 }

@@ -14,7 +14,7 @@ protocol SearchPresenterToViewControllerProtocol: PresenterToViewControllerProto
 
 protocol SearchViewControllerToPresenterProtocol: ViewControllerToPresenterProtocol {
     func viewLoaded()
-    func itemTapped(tappedItemModel: BooksSearchUIModel)
+    func itemTapped(tappedItemModel: BooksSearchUIModel, fromVC: UIViewController)
 }
 
 // MARK: - Interactor
@@ -27,6 +27,6 @@ protocol SearchInteractorToPresenterProtocol: InteractorToPresenterProtocol {
 }
 
 // MARK: - Router
-protocol SearchPresenterToRouter: RouterProtocol {
+protocol SearchPresenterToRouterProtocol: RouterProtocol {
     func pushToDetail(from: UIViewController, uiModel: BooksUIModel)
 }

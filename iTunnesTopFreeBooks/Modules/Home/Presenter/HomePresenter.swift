@@ -7,30 +7,31 @@
 
 import UIKit
 
-class HomePresenter: Presenter<HomeViewController, HomeInteractor, HomeRouter>  {
+class HomePresenter: Presenter  {
     
+    var viewController: HomePresenterToViewControllerProtocol! { get { return (self.viewControllerBase as! HomePresenterToViewControllerProtocol)} }
+    var interactor: HomePresenterToInteractorProtocol! { get { return (self.interactorBase as! HomePresenterToInteractorProtocol)} }
+    var router: HomePresenterToRouterProtocol! { get { return getRouter(type: HomeRouter.self)} }
 }
 
 extension HomePresenter: HomeViewControllerToPresenterProtocol  {
     
     func viewLoaded() {
-        self.interactor?.fetchData(awaitingPageIndex: 0)
+        self.interactor.fetchData(awaitingPageIndex: 0)
         NotificationCenter.default.addObserver(self,selector: #selector(self.favoriteUpdated), name: NSNotification.Name(rawValue: Constants.NotificationCenter.favoriteUpdated), object: nil)
     }
     
     @objc func favoriteUpdated(notification: NSNotification) {
-        self.viewController?.reloadData()
+        self.viewController.reloadData()
     }
     
-    func itemTapped(tappedItemModel: BooksUIModel) {
-        if let vc = self.viewController {
-            self.router?.pushToDetail(from: vc, uiModel: tappedItemModel)
-        }
+    func itemTapped(tappedItemModel: BooksUIModel, fromVC: UIViewController) {
+        self.router.pushToDetail(from: fromVC, uiModel: tappedItemModel)
     }
     
     
     func fetchNext(awaitingPageIndex: Int) {
-        self.interactor?.fetchData(awaitingPageIndex: awaitingPageIndex)
+        self.interactor.fetchData(awaitingPageIndex: awaitingPageIndex)
     }
     
 }
@@ -44,11 +45,11 @@ extension HomePresenter: HomeInteractorToPresenterProtocol  {
                 let uiModel = BooksUIModel(id: item.id ?? "", title: item.name ?? "", imageUrl: item.artworkUrl100 ?? "", releaseDate: Utils.stringToDate(string: item.releaseDate) ?? Date(), artistName: item.artistName ?? "")
                 uiItems.append(uiModel)
             }
-            self.viewController?.addItems(uiItems: uiItems, pageIndex: pageIndex)
+            self.viewController.addItems(uiItems: uiItems, pageIndex: pageIndex)
         }
     }
     
     func failedToFetchData() {
-        self.viewController?.failedToFetchData()
+        self.viewController.failedToFetchData()
     }
 }

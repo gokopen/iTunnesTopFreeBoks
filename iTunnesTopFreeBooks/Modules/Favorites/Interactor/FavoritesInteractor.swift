@@ -9,7 +9,7 @@ import Foundation
 
 class FavoritesInteractor: Interactor, FavoritesPresenterToInteractorProtocol {
   
-    typealias presenterType = FavoritesInteractorToPresenterProtocol
+    var presenter: FavoritesInteractorToPresenterProtocol { get { return getPresenter(type: FavoritesPresenter.self)} }
     
     private let api = Api()
     
@@ -17,9 +17,7 @@ class FavoritesInteractor: Interactor, FavoritesPresenterToInteractorProtocol {
         api.getTopFreeBooks() { [weak self] (success, response) in
             guard let self = self else { return }
             if success, let response = response {
-                if let p = self.presenter as? presenterType {
-                    p.setFetchedData(data: response)
-                }
+                self.presenter.setFetchedData(data: response)
             }
         }
     }

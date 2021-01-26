@@ -15,6 +15,8 @@ class SearchViewController: ViewController, SearchPresenterToViewControllerProto
     @IBOutlet weak var genreFilterButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var presenter: SearchViewControllerToPresenterProtocol! { get { return getPresenter(type: SearchPresenter.self)} }
+    
     var isGenreSearch = false {
         didSet {
             self.genreFilterButton.backgroundColor = self.isGenreSearch ? #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1) : UIColor.darkGray
@@ -29,7 +31,7 @@ class SearchViewController: ViewController, SearchPresenterToViewControllerProto
         }
     }
     
-    typealias presenterType = SearchViewControllerToPresenterProtocol
+   
     
     private var orginalItems = [BooksSearchUIModel]() {
         didSet {
@@ -46,13 +48,13 @@ class SearchViewController: ViewController, SearchPresenterToViewControllerProto
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = Localizations.Search.title
-        SearchRouter.setupModuleWithExistingView(view: self, interactor: SearchInteractor(), presenter: SearchPresenter(), router: SearchRouter())
+        SearchRouter.createModule(viewController: self)
         
         self.searchBar.delegate = self
         self.isNameSearch = true
 
         self.tableView.register(UINib(nibName: "SearchItemTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchItemTableViewCell")
-        (self.presenter as? presenterType)?.viewLoaded()
+        self.presenter?.viewLoaded()
     }
     
     func setItems(uiItems: [BooksSearchUIModel]) {
@@ -112,7 +114,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        (self.presenter as? presenterType)?.itemTapped(tappedItemModel: self.searchItems[indexPath.row])
+        self.presenter?.itemTapped(tappedItemModel: self.searchItems[indexPath.row], fromVC: self)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

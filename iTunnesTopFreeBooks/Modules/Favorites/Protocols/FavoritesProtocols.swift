@@ -14,7 +14,7 @@ protocol FavoritesPresenterToViewControllerProtocol: PresenterToViewControllerPr
 
 protocol FavoritesViewControllerToPresenterProtocol: ViewControllerToPresenterProtocol {
     func viewLoaded()
-    func itemTapped(tappedItemModel: BooksUIModel)
+    func itemTapped(tappedItemModel: BooksUIModel, fromVC: UIViewController)
 }
 
 // MARK: - Interactor
@@ -27,6 +27,6 @@ protocol FavoritesInteractorToPresenterProtocol: InteractorToPresenterProtocol {
 }
 
 // MARK: - Router
-protocol FavoritesPresenterToRouter: RouterProtocol {
+protocol FavoritesPresenterToRouterProtocol: RouterProtocol {
     func pushToDetail(from: UIViewController, uiModel: BooksUIModel)
 }

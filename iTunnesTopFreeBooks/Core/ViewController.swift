@@ -9,12 +9,20 @@ import UIKit
 
 
 class ViewController: UIViewController, PresenterToViewControllerProtocol {
-   
-    var presenter: ViewControllerToPresenterProtocol?
+
+    private var presenterBase: ViewControllerToPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    func getPresenter<T: ViewControllerToPresenterProtocol> (type: T.Type) -> T {
+        return self.presenterBase as! T
+    }
+    
+    func setPresenter<T: ViewControllerToPresenterProtocol> (_ newPresenter: T) {
+        self.presenterBase = newPresenter
     }
 
 }
