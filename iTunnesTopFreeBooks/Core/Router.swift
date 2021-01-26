@@ -1,0 +1,13 @@
+//
+//  Router.swift
+//  iTunnesTopFreeBooks
+//
+//  Created by Gokhan Alp on 3.01.2021.
+//
+
+import Foundation
+import UIKit
+
+class Router: RouterProtocol {
+
+}
